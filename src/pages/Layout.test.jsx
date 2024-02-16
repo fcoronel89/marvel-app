@@ -6,14 +6,20 @@ import { MemoryRouter, Route, Routes } from "react-router-dom";
 import "mock-local-storage";
 import Home from "./Home/Home";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import PropTypes from "prop-types";
 
 const queryClient = new QueryClient();
 
-const TestProviders = ({ children, currentUserValue }) => (
+const TestProviders = ({ children, currentUserValue = null }) => (
   <AuthContextProvider currentUser={currentUserValue}>
     {children}
   </AuthContextProvider>
 );
+
+TestProviders.propTypes = {
+  children: PropTypes.node.isRequired,
+  currentUserValue: PropTypes.string,
+};
 
 describe("Layout component", () => {
   afterEach(cleanup);
