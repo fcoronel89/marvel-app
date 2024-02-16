@@ -25,7 +25,7 @@ const CharacterView = () => {
   }
 
   if (isError) {
-    return <div>Error: {error.message}</div>;
+    return <div data-testid="error-message">Error: {error.message}</div>;
   }
 
   const handleDelete = async (characterId) => {
@@ -38,7 +38,7 @@ const CharacterView = () => {
   };
 
   return (
-    <div className="character-view">
+    <div className="character-view" data-testid="character-view">
       <h2>{character.name}</h2>
       <img
         src={`${character.thumbnail.path}.${character.thumbnail.extension}`}

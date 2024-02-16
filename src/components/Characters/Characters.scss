@@ -46,6 +46,7 @@
 }
 
 .character-view {
+  overflow: hidden;
     img {
         max-height: 400px;
         margin-bottom: .5rem;
