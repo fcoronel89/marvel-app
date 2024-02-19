@@ -15,12 +15,13 @@ const Register = () => {
             <input
               {...register("userName")}
               type="text"
+              id="userName"
             />
             {errors.userName && <p className="error">{errors.userName.message}</p>}
           </div>
           <div className="input-container">
             <label htmlFor="email">Email</label>
-            <input {...register("email")} type="email" />
+            <input {...register("email")} type="email" id="email" />
 
             {errors.email && <p className="error">{errors.email.message}</p>}
           </div>
@@ -29,6 +30,7 @@ const Register = () => {
             <input
               {...register("password")}
               type="password"
+              id="password"
             />
             {errors.password && <p className="error">{errors.password.message}</p>}
           </div>
