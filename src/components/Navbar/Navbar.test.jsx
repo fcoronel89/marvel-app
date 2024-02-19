@@ -1,21 +1,10 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-import { AuthContextProvider } from "../../context/authContext";
 import "mock-local-storage";
 import { MemoryRouter } from "react-router-dom";
 import Navbar from "./Navbar";
-import PropTypes from "prop-types";
+import { TestProviders } from "../../utils/TestProviders";
 
-const TestProviders = ({ children, currentUserValue }) => (
-  <AuthContextProvider currentUser={currentUserValue}>
-    {children}
-  </AuthContextProvider>
-);
-
-TestProviders.propTypes = {
-  children: PropTypes.node.isRequired,
-  currentUserValue: PropTypes.string,
-};
 
 describe("Navbar component", () => {
   afterEach(cleanup);
